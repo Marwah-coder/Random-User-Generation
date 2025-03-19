@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random User Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="background">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+    </div>
+
+    <div class="container">
+      <header>
+        <div class="logo">
+          <i class="fas fa-users logo-icon"></i>
+          <h1>Random User Generator</h1>
+        </div>
+        <div class="theme-toggle">
+          <i class="fas fa-sun"></i>
+          <label class="switch">
+            <input type="checkbox" id="theme-switch" />
+            <span class="slider round"></span>
+          </label>
+          <i class="fas fa-moon"></i>
+        </div>
+      </header>
+
+      <div class="controls">
+        <button id="generate-btn" class="btn">
+          <i class="fas fa-sync-alt"></i> Generate User
+        </button>
+      </div>
+
+      <div id="loader" class="loader-container">
+        <div class="loader">
+          <div class="loader-inner"></div>
+          <div class="loader-inner-2"></div>
+          <div class="loader-inner-3"></div>
+        </div>
+        <p>Loading user data...</p>
+      </div>
+
+      <div id="error-message" class="error-message">
+        <p>Failed to fetch user data. Please try again.</p>
+        <button id="try-again-btn" class="btn">Try Again</button>
+      </div>
+
+      <div id="user-card" class="user-card">
+        <div class="user-header">
+          <div id="user-avatar" class="user-avatar">
+            <img src="/placeholder.svg" alt="User Avatar" />
+          </div>
+          <div id="user-name" class="user-name">
+            <h2></h2>
+            <p class="user-username"></p>
+          </div>
+        </div>
+
+        <div class="user-details">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="detail-content">
+              <p class="detail-label">Email</p>
+              <p id="user-email" class="detail-value"></p>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="detail-content">
+              <p class="detail-label">Phone</p>
+              <p id="user-phone" class="detail-value"></p>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="detail-content">
+              <p class="detail-label">Date of Birth</p>
+              <p id="user-dob" class="detail-value"></p>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="detail-content">
+              <p class="detail-label">Location</p>
+              <p id="user-location" class="detail-value"></p>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-icon">
+              <i class="fas fa-id-card"></i>
+            </div>
+            <div class="detail-content">
+              <p class="detail-label">Nationality</p>
+              <p id="user-nationality" class="detail-value"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="user-footer">
+          <button id="copy-btn" class="action-btn" title="Copy user info">
+            <i class="fas fa-copy"></i> Copy Info
+          </button>
+          <button
+            id="generate-new-btn"
+            class="action-btn primary"
+            title="Generate new user"
+          >
+            <i class="fas fa-sync-alt"></i> New User
+          </button>
+        </div>
+      </div>
+
+      <div id="history-container" class="history-container">
+        <h3 class="history-title">
+          <i class="fas fa-history"></i> Recently Generated
+        </h3>
+        <div id="user-history" class="user-history"></div>
+      </div>
+    </div>
+
+    <div id="toast" class="toast">
+      <div class="toast-content">
+        <i id="toast-icon" class="fas fa-check-circle"></i>
+        <div class="toast-message">
+          <span id="toast-title">Success</span>
+          <span id="toast-description">Action completed successfully</span>
+        </div>
+      </div>
+      <div class="toast-progress"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
